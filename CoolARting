@@ -1,1 +1,11 @@
-
+<html>
+  <head>
+  <title>Cool man ting</title>
+  </head>
+  
+  <body>
+    <a-scene>
+      <a-glb-model position="0 0 -4" rotation="0 0 0" scale="0.1 0.1 0.1" src="untitled.glb"></a-glb-model>
+    </a-scene>
+  </body>
+</html>
