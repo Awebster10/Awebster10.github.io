@@ -1,45 +1,16 @@
 <html>
 <head>
     <title>Kelham Island Museum Tour</title>
-
-    <style> 
-        /*Add a black background color to the top navigation */
-       .topnav {
-         background-color: #888B8D;
-         overflow: hidden;
-       }
-       
-       /* Style the links inside the navigation bar */
-       .topnav a {
-         float: center;
-         color: #f2f2f2;
-         text-align: center;
-         padding: 14px 16px;
-         text-decoration: none;
-         font-size: 17px;
-       }
-       
-       /* Change the color of links on hover */
-       .topnav a:hover {
-         background-color: #ddd;
-         color: black;
-       }
-       
- 
-    </style>
+    <link rel="stylesheet" href="Style.css">
 </head>    
 
-<body BGCOLOR="#888B8D">
-    <P>   
-        <table width = 100%>
-            <tr>
-                <td align = left width = 30%> <IMG SRC="Kelham_Island_Logo.PNG" WIDTH=250 height="100"></IMG></td>
-                <td align = center width = 40%><font size = 30 color = white>AR Tour Experince</font></td>
-            </tr>
-        </table>
+<body BGCOLOR="#4d5356">
+    <P align="left" class="header">   
+        <IMG SRC="Kelham_Island_Logo.PNG" WIDTH=250 height="100"></IMG>
+        Kelham Island Museum Tour
     </P>
-    <div class="topnav" align = "center">
-        <a class="active" href="Index.html">Home</a>
+    <div class="topnav" align = "left">
+        <a href="Index.html">Home</a>
         <a href="AR_Tour.html">AR Tour</a>
         <a href="Contact_Us.html">Contact us</a>
         <a href="About_Page.html">About</a>
@@ -49,6 +20,34 @@
     <p>He He He Ha</p>
     <p>You Fool! We dont have AR tours yet. who do you think we are... Gandi?</p>
     <p>Geeeeeeet Gone</p>
+
+    <button type="button" class="collapsible">Menu</button>
+    <div class="content">
+        <div class="vertical-menu">
+            <a href="Index.html">Home</a>
+            <a href="AR_Tour.html">AR Tour</a>
+            <a href="Contact_Us.html">Contact us</a>
+            <a href="About_Page.html">About</a>
+        </div>
+    </div>
+
+        
+        <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            }
+          });
+        }
+        </script>
       
     </body>
 </html>

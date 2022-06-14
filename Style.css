@@ -1,0 +1,92 @@
+ /*Add a black background color to the top navigation */
+ .topnav {
+    background-color: #4d5356;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: center;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  .header {
+   font-size: 80px;
+   display: inline;
+   color: white;
+  }
+
+  .collapsible {
+   background-color: #777;
+   color: white;
+   cursor: pointer;
+   padding: 18px;
+   width: 20%;
+   border: none;
+   text-align: left;
+   outline: none;
+   font-size: 15px;
+   }
+
+   .active, .collapsible:hover {
+   background-color: #555;
+   }
+
+   .content {
+   padding: 0 18px;
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height 0.2s ease-out
+   }
+   .collapsible:after {
+   content: '\02795'; /* Unicode character for "plus" sign (+) */
+   font-size: 13px;
+   color: white;
+   float: right;
+   }
+
+   .active:after {
+   content: "\2796"; /* Unicode character for "minus" sign (-) */
+   }
+
+   .vertical-menu {
+   width: 20%; /* Set a width if you like */
+   }
+
+   .vertical-menu a {
+   background-color: #555; /* Grey background color */
+   color: black; /* Black text color */
+   display: block; /* Make the links appear below each other */
+   padding: 12px; /* Add some padding */
+   text-decoration: none; /* Remove underline from links */
+   }
+
+   .vertical-menu a:hover {
+   background-color: #ccc; /* Dark grey background on mouse-over */
+   }
+
+   <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            }
+          });
+        }
+        </script>
