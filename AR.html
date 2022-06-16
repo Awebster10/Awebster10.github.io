@@ -6,15 +6,15 @@
 <body style='margin : 0px; overflow: hidden;'>
   <a-scene embedded arjs='sourceType: webcam;'>
  
-    <a-marker preset='hiro'>
+    <a-marker>
       <!--Adding a glTF 2.0 model to your scene-->
       <a-entity
-      gltf-model-next="src: url(C:\Users\awebs\OneDrive\Documents\GitHub\Awebster10.github.io\Spider.gltf);"
+      gltf-model-next="src: url('C:\Users\awebs\OneDrive\Documents\GitHub\Awebster10.github.io\Spider.gltf');"
       >
       </a-entity>
       
     </a-marker>
 
-    <a-entity camera></a-entity>
+    <a-marker-camera type='pattern' url='pattern-marker.patt'></a-marker-camera>
   </a-scene>
 </body>
