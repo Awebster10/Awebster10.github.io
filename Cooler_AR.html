@@ -1,23 +1,51 @@
 <!DOCTYPE html>
-<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.2/aframe/build/aframe-ar.js"></script>
+<html>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
 <script>
-AFRAME.registerComponent('for_a_marker', {
-    init: function () {
-        var text = document.querySelector('#text');
-        text.addEventListener("click", function (evt) { //or you could do "mouseenter" [event](https://aframe.io/docs/0.9.0/components/cursor.html#events)
-            alert("do your stuff");
-        });
+    AFRAME.registerComponent("foo", {
+        init: function() {
+        const modelList = ["Spiderman", "Joe", "Text3"]
+        const model = document.getElementById('model')
+        const nextButton = document.getElementById('nextbutton')
+        
+        let idx = 1 // Start with the 2nd model as 1st is already in the scene on page load
+        const nextModel = () => {
+        // Need to remove gltf-component first due to AFrame regression: https://github.com/aframevr/aframe/issues/4341
+        model.removeAttribute('gltf-model')
+        // Switch to next model in the list
+        model.setAttribute('gltf-model', `#${modelList[idx]}`)
+    
+        idx = (idx + 1) % modelList.length
+        }
+        nextButton.onclick = nextModel // Switch to the next model when the button is pressed.
     }
-});
+    })
 </script>
-<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
-    <a-scene embedded arjs='debugUIEnabled: false; sourceType: webcam' vr-mode-ui='enabled: false'>
-        <a-entity cursor="rayOrigin: mouse" raycaster="objects: .intersectable; useWorldCoordinates: true;"></a-entity>
-        <a-marker id="marker" preset="hiro" emitevents="true" for_a_marker> 
-            <a-text id="text" class="intersectable" scale="2 2 2" position="0 0 0" rotation="270 0 0" value="text" color="red"></a-text>   
+
+<div id="nextbutton" style="display: block; z-index: 10"> <h2>Next 3D Model</h2> </div>
+
+<body style="margin : 0px; overflow: hidden;">
+    <a-scene foo>
+        <a-marker preset="hiro">
+
+            <a-asset-item
+            id="Spiderman"
+            src="https://arjs-cors-proxy.herokuapp.com/Awebster10.github.io/Spider.gltf"
+            ></a-asset-item>
+
+            <a-asset-item
+            id="Joe"
+            src="https://arjs-cors-proxy.herokuapp.com/Awebster10.github.io/untitled.gltf"
+            ></a-asset-item>
         </a-marker>
+
         <a-entity camera></a-entity>
-    </a-scene>
-</body>
+        </a-scene>
+    </body>
 </html>
+
+
+
