@@ -20,8 +20,8 @@
     color: black;
   }
   .header {
-   display: inline;
    color: white;
+   display: inline-block;
   }
 
    footer {
@@ -29,9 +29,10 @@
     padding: 20px;
     background-color: #444;
     color: white;
-   }
+    bottom: 10px;
+    }
    
-   body {
+   .body {
     margin: 0;
    }
 
