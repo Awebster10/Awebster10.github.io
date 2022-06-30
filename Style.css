@@ -68,3 +68,11 @@
 .container .btn:hover {
   background-color: black;
 }
+
+.nospace .{
+    font-size : 30px;
+    background-color : #cfc;
+    padding : 0;
+    margin : 0;
+    line-height : 20px;
+}
