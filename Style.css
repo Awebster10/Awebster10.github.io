@@ -19,10 +19,20 @@
     background-color: #ddd;
     color: black;
   }
-  .header {
-   color: white;
-   display: inline-block;
-  }
+
+
+  .item p {
+    display: inline-block;
+    font-size: 5vw;
+    color: white;
+}
+.item p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 15ch;
+    vertical-align: middle !important;
+}
 
    footer {
     text-align: left;
