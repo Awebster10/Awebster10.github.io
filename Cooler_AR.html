@@ -13,7 +13,7 @@
       <a-image src="BigEngineImage1.png" rotation="270 0 0" id="ModelName"></a-image>
     </a-marker>
 
-    <div style='position: relative; top: 30px; height: 100px; width:100%; text-align: center; z-index: 1;'>
+    <div style='position: relative; top: 90px; height: 100px; width:100%; text-align: center; z-index: 1;'>
       <button onclick="NextModel()">
         Next model
       </button>
@@ -50,6 +50,7 @@
         break;
       case 6:
       document.getElementById("ModelName").setAttribute("src","BigEngineImage7.png" )
+      ModelID = 0;
         break;
     }
   }
